@@ -1,16 +1,12 @@
-export default function themeChatButton() {
+module.exports = function () {
     return {
-      name: '@custom/docusaurus-chat-button',
-  
-      getThemePath() {
-        return './src/theme';
-      },
-      getTypeScriptThemePath() {
-        return './src/theme';
-      },
+        name: "@custom/docusaurus-chat-button",
+
+        getThemePath() {
+            return "./src/theme";
+        },
+        getSwizzleComponentList() {
+            return ["SearchBar"];
+        },
     };
-  }
-  
-  export function getSwizzleComponentList() {
-    return ['Footer'];
-  }
+};
