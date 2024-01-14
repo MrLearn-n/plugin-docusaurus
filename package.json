@@ -1,0 +1,37 @@
+{
+  "name": "@custom/docusaurus",
+  "license": "ISC",
+  "version": "1.0.4",
+  "author": "",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrLearn-n/plugin-docusaurus.git"
+  },
+  "tsup": {
+    "entry": ["searchBar/index.js", "chatButton/index.js", "chatButton/src/theme/Footer/index.jsx",  "searchBar/src/theme/SearchBar.jsx"],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
+  "scripts": {
+      "build": "tsup --format cjs,esm",
+      "release": "npm run build && npm publish",
+      "lint": "tsc"
+  },
+  "devDependencies": {
+      "tsup": "^6.5.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0"
+  },
+  "files": [
+    "dist",
+    "searchBar",
+    "chatButton",
+    "shared",
+    "index.js"
+  ]
+}
