@@ -1,16 +1,28 @@
-export default function themeSearchBar() {
-  return {
-    name: '@custom/docusaurus-search-bar',
+module.exports = function () {
+    return {
+        name: "@custom/docusaurus-search-bar",
 
-    getThemePath() {
-      return './src/theme';
-    },
-    getTypeScriptThemePath() {
-      return './src/theme';
-    },
-  };
-}
+        injectHtmlTags: () => {
+            return {
+                headTags: [
+                    {
+                        tagName: "script",
+                        attributes: {
+                            src: `https://unpkg.com/@inkeep/widgets-embed@latest/dist/embed.js`,
+                            type: "module",
+                            defer: true,
+                        },
+                    },
+                ],
+            };
+        },
 
-export function getSwizzleComponentList() {
-  return ['SearchBar'];
-}
+
+        getThemePath() {
+            return "./src/theme";
+        },
+        getSwizzleComponentList() {
+            return ["SearchBar"];
+        },
+    };
+};
