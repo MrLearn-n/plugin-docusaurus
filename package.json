@@ -25,7 +25,10 @@
       "tsup": "^6.5.0"
   },
   "peerDependencies": {
-    "react": "^17.0.0"
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "@docusaurus/theme-classic": "^2.4.3 || ^3.1.0",
+    "@docusaurus/module-type-aliases": "^2.4.3 || ^3.1.0"
   },
   "files": [
     "dist",
